@@ -1,0 +1,460 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #020202;
+    color: #d7d7d7;
+    font-family: "Courier New", monospace;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+section {
+    min-height: 100vh;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    padding: 40px 15px; /* إضافة padding حماية للأطراف على الموبايل */
+}
+
+.content {
+    width: min(900px, 90%);
+    text-align: center;
+
+    position: relative;
+    z-index: 2;
+}
+
+h2 {
+    font-size: clamp(32px, 6vw, 70px); /* حجم متجاوب تلقائياً مع الشاشة */
+    color: #cfcfcf;
+
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+    text-shadow:
+        0 0 5px #ff000033,
+        0 0 20px #000;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    flex-direction: column;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.92)
+        ),
+        url("wallhaven-8x5v52.jpg");
+
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(20%);
+}
+
+.header::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 25%,
+            rgba(0, 0, 0, 0.85) 100%
+        );
+
+    pointer-events: none;
+}
+
+.logo {
+    position: relative;
+    z-index: 2;
+}
+
+.logo img {
+    width: 400px;
+    max-width: 80vw;
+    height: auto; /* للحفاظ على أبعاد الصورة */
+
+    border: 1px solid #3b0000;
+
+    box-shadow:
+        0 0 15px #000,
+        0 0 40px #200000;
+
+    filter:
+        grayscale(15%)
+        contrast(1.2)
+        drop-shadow(0 0 25px #ff000033);
+}
+
+.header h1 {
+    margin-top: 30px;
+
+    font-size: clamp(28px, 5vw, 55px);
+
+    color: #bdbdbd;
+
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 5px #8b0000,
+        0 0 15px #000,
+        3px 3px 0 #080808;
+}
+
+.subtitle {
+    margin-top: 15px;
+
+    color: #666;
+
+    font-size: clamp(12px, 2.5vw, 18px);
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    background:
+        radial-gradient(
+            ellipse at center,
+            #180000 0%,
+            #060000 30%,
+            #010101 75%
+        );
+    background-image: url("fuckiiee.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.about::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    mask-image:
+        radial-gradient(
+            circle,
+            black 20%,
+            transparent 80%
+        );
+}
+
+.about::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 3px,
+            rgba(255, 255, 255, 0.015) 4px
+        );
+
+    pointer-events: none;
+}
+
+.about p {
+    max-width: 700px;
+    margin: auto;
+
+    font-size: clamp(16px, 3.5vw, 25px);
+
+    line-height: 1.8;
+
+    color: #777;
+
+    text-shadow:
+        0 0 8px #000;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills {
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.489),
+            rgba(10, 0, 0, 0.736)
+        ),
+        url("No words just fucking silenece.png");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.skills h2 {
+    color: #7c0000;
+
+    text-shadow:
+        0 0 15px #ff000022;
+}
+
+.skills-box {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 50px;
+}
+
+.skill {
+    padding: 14px 20px;
+
+    background: rgba(5, 5, 5, 0.9);
+
+    border: 1px solid #2b1111;
+
+    color: #999;
+
+    font-size: 16px;
+
+    letter-spacing: 2px;
+
+    transition: 0.4s;
+}
+
+.skill:hover {
+    color: #e00000;
+
+    border-color: #700000;
+
+    box-shadow:
+        0 0 10px #550000,
+        inset 0 0 15px #180000;
+
+    transform: translateY(-5px);
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #1b0000,
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            #120000,
+            transparent 30%
+        ),
+        #010101;
+}
+
+.project-card {
+    max-width: 700px;
+    width: 100%;
+
+    margin: 25px auto;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0c0c0c,
+            #030303
+        );
+
+    border: 1px solid #211111;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.7),
+        inset 0 0 30px rgba(70, 0, 0, 0.05);
+
+    text-align: left;
+
+    position: relative;
+}
+
+.project-card::before {
+    content: "ACCESS";
+
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    font-size: 10px;
+
+    color: #3b0000;
+
+    letter-spacing: 3px;
+}
+
+.project-card h3 {
+    color: #a00000;
+
+    font-size: 22px;
+
+    margin-bottom: 15px;
+
+    letter-spacing: 2px;
+}
+
+.project-card p {
+    color: #666;
+
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    background:
+        radial-gradient(
+            ellipse at center,
+            #220000 0%,
+            #0800005e 25%,
+            #010101 70%
+        );
+    background-image: url("279ab83e06c8e3b15e6a7a89533753f6.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.contact::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    background: #610000;
+
+    filter: blur(180px);
+
+    opacity: 0.15;
+
+    border-radius: 50%;
+}
+
+.contact h2 {
+    color: #b00000;
+}
+
+.contact p {
+    margin-bottom: 35px;
+
+    font-size: clamp(16px, 3vw, 22px);
+
+    color: #666;
+}
+
+.contact-btn {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    border: 1px solid #650000;
+
+    background: #090000;
+
+    color: #b00000;
+
+    text-decoration: none;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    transition: 0.4s;
+}
+
+.contact-btn:hover {
+    background: #500000;
+
+    color: #fff;
+
+    box-shadow:
+        0 0 25px #700000;
+}
+
+
+/* =========================
+   RESPONSIVE (MOBILE FIXES)
+========================= */
+
+@media (max-width: 768px) {
+    section {
+        min-height: auto;
+        padding: 60px 20px;
+    }
+
+    .skills-box {
+        gap: 10px;
+    }
+
+    .skill {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+}
